@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hotel.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="discount-banner">
+        <p><span class="highlight">🎉 Special Offer:</span> Enjoy 15% off on all bookings during Ramadan! Hurry, limited-time offer!</p>
+    </div>
+    <div class="container">
+        <header>
+            <!-- Logo -->
+            <img src="d6c2dbff-a410-4067-99de-dd0a1a2664b4.jpeg" alt="Website Logo" class="logo">
+            
+            <!-- Website Name -->
+            <h1>WELCOME TO SKYBOUND BOOKING</h1>
+            
+            <!-- Buttons -->
+            <div class="buttons">
+                <a href="project.html"><button id="flights">HOME</button></a>
+                <a href="flights.html"><button id="hotels">FLIGHTS</button></a>
+                <a href="travel-blogs.html"><button id="travel-blogs">TRAVEL BLOGS</button></a>
+            </div>
+        </header>
+    </div>
+    <div class="hotel-heading">
+        
+        <h1 class="heading">🏨 Book Your Hotels</h1>
+        <p class="subheading">Find the perfect place to stay for your next journey.</p>
+    </div>
+    <div class="some-hotels">
+        <h2>Here Are Some Hotels You Might Also Book for Your Trip</h2>
+        <div class="hotel-card">
+            <img src="Capella-Bangkok-Top-01.jpg" alt="Capella Bangkok">
+            <div class="hotel-details">
+                <h3>Capella Bangkok</h3>
+                <p>
+                    A luxury 5-star hotel on the Chao Phraya Riverfront in the Charoenkrung district, Bangkok, Thailand.
+                </p>
+                <ul>
+                    <li><strong>Rooms:</strong> 101 rooms and villas with floor-to-ceiling windows, balconies, and terraces.</li>
+                    <li><strong>Amenities:</strong> Swimming pool, spa, fitness center, and a greenhouse garden.</li>
+                    <li><strong>Dining:</strong> Michelin-starred fine dining, teahouse, and cocktail bar.</li>
+                    <li><strong>Family-Friendly:</strong> Children under 11 stay free when sharing a parent's bed.</li>
+                    <li><strong>Pet-Friendly:</strong> One small dog allowed per room (up to 10 kg).</li>
+                </ul>
+                <p><em>"Picturesque, welcoming, and luxurious with spacious rooms and attentive service."</em></p>
+            </div>
+        </div>
+    
+    <div class="hotel-card">
+        <img src="Cheval Blanc-hero_W50BH24-profile.jpg" alt="Cheval Blanc">
+        <div class="hotel-details">
+            <h3>Cheval Blanc</h3>
+            <p>
+                Located in some of the world's most iconic destinations, Cheval Blanc offers an unparalleled experience of art de vivre.
+            </p>
+            <ul>
+                <li><strong>Rooms:</strong> Elegantly designed rooms and suites with bespoke interiors and breathtaking views.</li>
+                <li><strong>Amenities:</strong> Exclusive spas, infinity pools, private beach access, and state-of-the-art fitness centers.</li>
+                <li><strong>Dining:</strong> Gastronomic dining led by world-renowned chefs with a focus on French and local cuisine.</li>
+                <li><strong>Services:</strong> Personalized butler services, curated excursions, and unique cultural programs.</li>
+                <li><strong>Family-Friendly:</strong> Dedicated activities and experiences for children and families.</li>
+            </ul>
+            <p><em>"A haven of sophistication and serenity, offering guests a truly unforgettable escape."</em></p>
+        </div>
+    </div>
+
+   <div class="hotel-card">
+        <img src="passalacqualakecomo_1658246753_2885905326840344120_10697072035.jpg" alt="passalacqualakecomo">
+        <div class="hotel-details">
+            <h3>Passalacqua, Lake Como</h3>
+            <p>
+                A luxurious boutique hotel situated on the shores of the breathtaking Lake Como, offering an exquisite blend of history and elegance.
+            </p>
+            <ul>
+                <li><strong>Rooms:</strong> 24 uniquely designed suites with stunning views of Lake Como and lush gardens.</li>
+                <li><strong>Amenities:</strong> Private gardens, lakeside infinity pool, tennis court, and an exclusive spa.</li>
+                <li><strong>Dining:</strong> Fine Italian cuisine with locally sourced ingredients, served in a romantic lakeside setting.</li>
+                <li><strong>History:</strong> Once home to noble families and artists, preserving the charm of 18th-century Italian architecture.</li>
+                <li><strong>Experiences:</strong> Private boat tours, cooking classes, and cultural excursions around Lake Como.</li>
+            </ul>
+            <p><em>"An intimate haven of tranquility, perfect for romantic escapes and unforgettable celebrations."</em></p>
+        </div>
+    </div>
+    <div class="hotel-card">
+        <img src="aman_tokyo_japan_-_twin_suite_bedroom_with_view.jpg" alt="aman-tokoyo">
+        <div class="hotel-details">
+            <h3>Aman Tokyo</h3>
+        <p>
+            A serene urban sanctuary blending contemporary luxury with traditional Japanese design in the heart of Tokyo.
+        </p>
+        <ul>
+            <li><strong>Location:</strong> Occupies the top six floors of the Otemachi Tower, offering panoramic views of the Imperial Palace Gardens and Mount Fuji.</li>
+            <li><strong>Rooms:</strong> Spacious suites with floor-to-ceiling windows, traditional Japanese accents, and luxury amenities.</li>
+            <li><strong>Amenities:</strong> Spa, 30-meter swimming pool, fitness center, and exclusive Aman Lounge.</li>
+            <li><strong>Dining:</strong> Gourmet Japanese and international cuisine, served with an emphasis on fresh seasonal ingredients.</li>
+            <li><strong>Experiences:</strong> Tea ceremonies, wellness programs, and cultural tours exploring Tokyo's rich heritage.</li>
+        </ul>
+        <p><em>"A harmonious blend of minimalism and indulgence, offering a peaceful retreat above the bustling city."</em></p>
+    </div>
+  </div>
+</div>
+
+    <div class="hello"><h1>Hotel Booking Form</h1></div>
+    <div class="hi"><p>Please select your preferred hotel and fill in your details for booking.</p></div>
+
+<div class="containerhotel">
+    
+
+    <form 
+    id="booking-form" 
+    action="https://formspree.io/f/xanyzprn" 
+    method="POST" 
+    onsubmit="return showBookingDetails(event)" 
+    class="booking-form">
+    <label for="guest-name">Full Name:</label>
+    <input type="text" id="guest-name" name="guest_name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" required>
+
+    <label for="check-in">Check-in Date:</label>
+    <input type="date" id="check-in" name="check_in" required>
+
+    <label for="check-out">Check-out Date:</label>
+    <input type="date" id="check-out" name="check_out" required>
+
+    <label for="hotel-selection">Select Hotel:</label>
+    <select id="hotel-selection" name="hotel" required>
+        <option value="Capella Bangkok">Capella Bangkok</option>
+        <option value="Cheval Blanc">Cheval Blanc</option>
+        <option value="Passalacqua, Lake Como">Passalacqua, Lake Como</option>
+        <option value="Aman Tokyo">Aman Tokyo</option>
+    </select>
+
+    <label for="room-type">Select Room Type:</label>
+    <select id="room-type" name="room_type" required>
+        <option value="single">Single Room</option>
+        <option value="double">Double Room</option>
+        <option value="suite">Suite</option>
+    </select>
+
+    <label for="number-of-guests">Number of Guests:</label>
+    <input type="number" id="number-of-guests" name="guests" min="1" required>
+
+    <!-- Hidden field for booking fee -->
+    <input type="hidden" id="hidden-booking-fee" name="booking_fee">
+
+    <button class="cta">
+        <div class="arrow">
+          <div></div>
+        </div>
+        <span class="label">
+          Book a Hotel
+        </span>
+      </button>
+
+</form>
+
+<!-- Booking Details Section -->
+<div id="booking-summary" style="display:none;">
+    <h2>Booking Confirmation</h2>
+    <p id="summary-name"></p>
+    <p id="summary-email"></p>
+    <p id="summary-phone"></p>
+    <p id="summary-check-in"></p>
+    <p id="summary-check-out"></p>
+    <p id="summary-hotel"></p>
+    <p id="summary-room"></p>
+    <p id="summary-guests"></p>
+    <p id="summary-fee"></p>
+</div>
+
+<script>
+    function showBookingDetails(event) {
+    event.preventDefault(); // Prevent form submission temporarily
+
+    // Get form values
+    const guestName = document.getElementById("guest-name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const checkIn = document.getElementById("check-in").value;
+    const checkOut = document.getElementById("check-out").value;
+    const hotel = document.getElementById("hotel-selection").value;
+    const roomType = document.getElementById("room-type").value;
+    const guests = parseInt(document.getElementById("number-of-guests").value);
+
+    // Define room prices
+    const roomPrices = {
+        "single": 100,
+        "double": 150,
+        "suite": 250
+    };
+
+    // Calculate the number of nights
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+    const nights = (checkOutDate - checkInDate) / (1000 * 3600 * 24); // Convert milliseconds to days
+
+    // Calculate booking fee
+    const roomPrice = roomPrices[roomType];
+    const bookingFee = roomPrice * nights * guests;
+
+    // Populate the hidden booking fee field
+    document.getElementById("hidden-booking-fee").value = bookingFee.toFixed(2);
+
+    // Display the booking details
+    document.getElementById("summary-name").textContent = "Name: " + guestName;
+    document.getElementById("summary-email").textContent = "Email: " + email;
+    document.getElementById("summary-phone").textContent = "Phone: " + phone;
+    document.getElementById("summary-check-in").textContent = "Check-in Date: " + checkIn;
+    document.getElementById("summary-check-out").textContent = "Check-out Date: " + checkOut;
+    document.getElementById("summary-hotel").textContent = "Hotel: " + hotel;
+    document.getElementById("summary-room").textContent = "Room Type: " + roomType;
+    document.getElementById("summary-guests").textContent = "Number of Guests: " + guests;
+    document.getElementById("summary-fee").textContent = "Booking Fee: $" + bookingFee.toFixed(2);
+
+    // Show the booking summary
+    document.getElementById("booking-summary").style.display = "block";
+
+    // Submit the form to Formspree
+    document.getElementById("booking-form").submit();
+}
+</script>
+</body>
+</html>

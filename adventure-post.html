@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adventure.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="d6c2dbff-a410-4067-99de-dd0a1a2664b4.jpeg" alt="Skybound Logo" class="logo">
+            <h1 class="site-title">Adventure Awaits</h1>
+            <nav class="main-nav">
+                <a href="travel-blogs.html">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="destinations">
+        <div class="destination">
+            <img src="outside-guide-grand-canyon_h.webp" alt="Grand Canyon">
+            <h2>The Grand Canyon, USA</h2>
+            <p>Famous for hiking, whitewater rafting, and rock climbing, the Grand Canyon offers adventure seekers a breathtaking landscape to explore.</p>
+        </div>
+
+        <div class="destination">
+            <img src="Trekking-in-Nepal-from-India.webp" alt="himalayas">
+            <h2>The Himalayas, Nepal/India/Tibet</h2>
+            <p>The Himalayas are a mecca for trekkers and mountaineers, with iconic adventures like the Everest Base Camp Trek and Annapurna Circuit.</p>
+        </div>
+
+        <div class="destination">
+            <img src="coasta-rica-laenderinformationen-bruecke-regenwald-natucate.webp" alt="Costa Rica">
+            <h2>Costa Rica</h2>
+            <p>From zip-lining through rainforests to surfing and wildlife watching, Costa Rica is an adventure lover's paradise with diverse landscapes.</p>
+        </div>
+
+        <div class="destination">
+            <img src="iceland-exploring-myrdalsjokull-ice-caves-rth-1800x0-c-default.jpg" alt="Iceland">
+            <h2>Iceland</h2>
+            <p>Explore glaciers, volcanoes, and geysers, or take a thrilling snowmobile ride across Vatnajökull Glacier in Iceland's dramatic landscape.</p>
+        </div>
+
+        <div class="destination">
+            <img src="best-new-zealand-beaches.jpg" alt="New Zealand">
+            <h2>New Zealand</h2>
+            <p>The adventure capital of the world, New Zealand offers bungee jumping, skydiving, and world-class hiking trails in Queenstown and beyond.</p>
+        </div>
+
+        <div class="destination">
+            <img src="scenic-landscape-patagonia-south-america-beautiful-landscape-with-mt-fitz-roy-los-glaciares-national-park-patagonia-argentina-south-america_1028938-204081.avif" alt="Patagonia">
+            <h2>Patagonia, Argentina/Chile</h2>
+            <p>Known for its rugged mountains, glaciers, and fjords, Patagonia offers some of the best trekking and outdoor adventures in the world.</p>
+        </div>
+
+        <div class="destination">
+            <img src="2024-08-11.jpg" alt="Swiss Alps">
+            <h2>Swiss Alps, Switzerland</h2>
+            <p>From skiing to paragliding, the Swiss Alps offer adventures in some of the most stunning mountain landscapes on Earth.</p>
+        </div>
+
+        <div class="destination">
+            <img src="serengeti-national-park.jpg" alt="Serengeti">
+            <h2>Africa’s Serengeti, Tanzania</h2>
+            <p>Go on a thrilling safari to witness the Big Five and experience the Great Migration in the heart of Tanzania's Serengeti National Park.</p>
+        </div>
+
+        <div class="destination">
+            <img src="istockphoto-478234780-612x612.jpg" alt="Borneo">
+            <h2>Borneo, Malaysia/Indonesia</h2>
+            <p>Climb Mount Kinabalu, explore rainforests, and encounter unique wildlife like orangutans in Borneo’s diverse ecosystems.</p>
+        </div>
+
+        <div class="destination">
+            <img src="146.jpg" alt="Queen Charlotte Track">
+            <h2>Queen Charlotte Track, New Zealand</h2>
+            <p>A scenic hiking trail that offers breathtaking views of the Marlborough Sounds, perfect for outdoor adventurers.</p>
+        </div>
+    </div>
+
+    
+    <div class="comment-section">
+        <h2>Leave a Comment</h2>
+        <form id="comment-form" action="https://formspree.io/f/xanyzprn" method="post" class="comment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+            
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="message" rows="5" placeholder="Write your comment here..." required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div id="success-message" style="display: none; color: green;">Thank you! Your comment has been sent successfully.</div>
+        <div id="error-message" style="display: none; color: red;">Oops! There was an error. Please try again.</div>
+    </div>
+<script>
+   const form = document.querySelector('.comment-form');
+const successMessage = document.getElementById('success-message');
+const errorMessage = document.getElementById('error-message');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Prevent page reload
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+            form.reset(); // Reset the form fields
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (error) {
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+    }
+});
+
+    
+</script>
+<footer>
+    <p>&copy; 2024 Adventure Travel Blog</p>
+</footer>
+</body>
+</html>

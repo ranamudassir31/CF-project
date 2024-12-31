@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="brand-header">
+        <h1>Welcome to AirArabia Airlines</h1>
+    </header>
+
+    <main class="brand-info">
+        <section class="brand-description">
+            <h2>About Airarabia</h2>
+            <p>Air Arabia is the Middle East and North Africa’s first and largest low-cost carrier, offering affordable, reliable, and convenient air travel. With a network spanning over 170 destinations, Air Arabia focuses on delivering value for money while maintaining the highest safety and service standards.</p>
+        </section>
+
+        <section class="highlights">
+            <h3>Why Choose PIA?</h3>
+            <ul>
+                <li>Wide domestic and international route coverage.</li>
+                <li>Affordable and flexible flight options.</li>
+                <li>Customer-friendly service and reliable schedules.</li>
+            </ul>
+        </section>
+
+        <section class="booking-form">
+            <h1>PIA Flight Booking</h1>
+            <form id="flight-booking-form" 
+                  action="https://formspree.io/f/xanyzprn" 
+                  method="POST" 
+                  onsubmit="prepareEmail(event)">
+        
+                <label for="passenger-name">Passenger Name:</label>
+                <input type="text" id="passenger-name" name="Passenger Name" placeholder="Enter your name" required>
+        
+                <label for="origin">Travelling From:</label>
+                <input type="text" id="origin" name="Origin" placeholder="Enter departure city" required>
+        
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="Destination" placeholder="Enter destination city" required>
+        
+                <label for="departure">Departure Date:</label>
+                <input type="date" id="departure" name="Departure Date" required>
+        
+                <label for="return">Return Date:</label>
+                <input type="date" id="return" name="Return Date">
+        
+                <label for="flight-class">Flight Class:</label>
+                <select id="flight-class" name="Flight Class">
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first-class">First Class</option>
+                </select>
+        
+                <label for="num-passengers">Number of Passengers:</label>
+                <input type="number" id="num-passengers" name="Passengers" value="1" min="1" required>
+        
+                <button type="submit">Submit</button>
+            </form>
+        
+            <!-- Optional: Remove the summary display -->
+            <div id="booking-summary" class="summary" style="display: none;">
+                <h2>Booking Summary</h2>
+                <p id="summary-name"></p>
+                <p id="summary-origin"></p>
+                <p id="summary-destination"></p>
+                <p id="summary-departure"></p>
+                <p id="summary-return"></p>
+                <p id="summary-class"></p>
+                <p id="summary-passengers"></p>
+                <p id="summary-fare"></p>
+            </div>
+        </section>
+        
+    <script>
+        function prepareEmail(event) {
+    event.preventDefault();
+
+    // Fetch values from form fields
+    const name = document.getElementById("passenger-name").value;
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+    const departureDate = document.getElementById("departure").value;
+    const returnDate = document.getElementById("return").value;
+    const flightClass = document.getElementById("flight-class").value;
+    const numPassengers = parseInt(document.getElementById("num-passengers").value);
+
+    // Optional: Define class prices and calculate fare
+    const classPrices = { "economy": 200, "business": 500, "first-class": 1000 };
+    const totalFare = classPrices[flightClass] * numPassengers;
+
+    // Create a hidden input field for Total Fare
+    const form = document.getElementById("flight-booking-form");
+    const fareInput = document.createElement("input");
+    fareInput.type = "hidden";
+    fareInput.name = "Total Fare";
+    fareInput.value = "$" + totalFare.toFixed(2);
+
+    // Append hidden input to form
+    form.appendChild(fareInput);
+
+    // Automatically submit the form to Formspree
+    form.submit();
+}
+
+
+    </script>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #e3f2fd, #ef172c);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+.brand-header {
+    text-align: center;
+    padding: 20px;
+    background: #db1616;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.brand-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Main Section */
+.brand-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.brand-description,
+.highlights,
+.booking-form {
+    margin-bottom: 20px;
+}
+
+.brand-description h2,
+.highlights h3,
+.booking-form h2 {
+    color: #c80b0b;
+    margin-bottom: 10px;
+}
+
+.brand-description p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.highlights ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.highlights ul li {
+    margin: 5px 0;
+}
+
+/* Booking Form */
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #fa2d3e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #690a0aec;
+}
+.summary {
+    display: none;
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    background: #7d0420;
+    padding: 10px;
+    border-radius: 8px;
+}
+    </style>
+</body>
+</html>

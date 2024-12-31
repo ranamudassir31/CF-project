@@ -1,0 +1,237 @@
+/* General Reset */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: #f4f7fc;
+    color: #003580;
+    min-height: 100vh;
+}
+
+/* Scrolling Discount Banner */
+.discount-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg,  #ff9900, #ffcc66);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 3px solid #004080;
+}
+
+.discount-banner .highlight {
+    color: #cce7ff;
+    font-weight: bold;
+}
+
+.discount-banner p {
+    margin: 0;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #0056b3;
+    color: #fff;
+    margin-top: 50px; /* Avoid overlap with banner */
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+header .logo {
+    height: 50px;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+header .buttons {
+    text-align: center;
+    width: 100%;
+}
+
+header .buttons a button {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ff6f00;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header .buttons a button:hover {
+    background-color: #ff8c1a;
+}
+
+/* Flight Booking Section */
+.flight-booking-section {
+    text-align: center;
+    padding: 40px;
+    background: #e3f2fd;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: #0056b3;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.subheading {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #1565c0;
+}
+
+/* Cards */
+.flights-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flight-card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.flight-logo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.flight-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #0056b3;
+}
+
+.flight-button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.flight-button:hover {
+    background-color: #003580;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0056b3;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .flight-booking-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .flights-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flight-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .discount-banner {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .buttons {
+        width: auto;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

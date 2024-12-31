@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="travel_blog.css">
+    <title>Document</title>
+</head>
+<body>
+    
+            <header class="header">
+                
+                
+                <div class="text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary-main">TRAVELS-BLOGS</span>
+                        <span class="heading-primary-sub">COME AND EXPLORE THE WORLD</span>
+                    </h1>
+                    <a href="project.html" class="btn btn-white btn-animated">HOME</a>
+                    <a href="flights.html" class="btn btn-white btn-animated">FLIGHTS</a>
+                    <a href="hotels.html" class="btn btn-white btn-animated">HOTELS</a>
+                </div>
+            </header>
+    
+        <!-- Filter Options -->
+        <div class="filters">
+            <button onclick="filterBlogs('all')">All</button>
+            <button onclick="filterBlogs('adventure')">Adventure</button>
+            <button onclick="filterBlogs('family')">Family</button>
+            <button onclick="filterBlogs('budget')">Budget</button>
+        </div>
+    
+        <!-- Blog Posts -->
+        <div class="blog-list">
+            <div class="blog-post adventure">
+                <img src="travel-blog-niche-ideas.jpg" alt="Adventure Travel">
+                <h3>Top 10 Adventure Spots Around the World</h3>
+                <p>Discover the best destinations for adrenaline junkies...</p>
+                <a href="adventure-post.html">Read More</a>
+            </div>
+            <div class="blog-post family">
+                <img src="istockphoto-1450052495-612x612.jpg" alt="Family Travel">
+                <h3>Best Family-Friendly Destinations</h3>
+                <p>Planning a family vacation? Here are some great ideas...</p>
+                <a href="family-post.html">Read More</a>
+            </div>
+            <div class="blog-post budget">
+                <img src="istockphoto-1412237261-612x612.jpg" alt="Budget Travel">
+                <h3>How to Travel on a Budget</h3>
+                <p>Here are some tips to explore the world without breaking the bank...</p>
+                <a href="budget-post.html">Read More</a>
+            </div>
+            <!-- Add more blog posts here -->
+        </div>
+    </div>
+    <script>function filterBlogs(category) {
+        const posts = document.querySelectorAll('.blog-post');
+        
+        posts.forEach(post => {
+            if (category === 'all' || post.classList.contains(category)) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    }
+    </script>
+</body>
+</html>

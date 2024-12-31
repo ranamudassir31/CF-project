@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIA - Pakistan International Airlines</title>
+    <link rel="stylesheet" href="brand.css">
+</head>
+<body>
+    <header class="brand-header">
+        <h1>Welcome to Pakistan International Airlines</h1>
+    </header>
+
+    <main class="brand-info">
+        <section class="brand-description">
+            <h2>About PIA</h2>
+            <p>Pakistan International Airlines (PIA) is the national flag carrier of Pakistan. Known for its extensive domestic and international network, PIA connects major cities within Pakistan and numerous global destinations. Established in 1946, PIA is recognized for its affordable fares and dependable service.</p>
+        </section>
+
+        <section class="highlights">
+            <h3>Why Choose PIA?</h3>
+            <ul>
+                <li>Wide domestic and international route coverage.</li>
+                <li>Affordable and flexible flight options.</li>
+                <li>Customer-friendly service and reliable schedules.</li>
+            </ul>
+        </section>
+
+        <section class="booking-form">
+            <h1>PIA Flight Booking</h1>
+            <form id="flight-booking-form" 
+                  action="https://formspree.io/f/xanyzprn" 
+                  method="POST" 
+                  onsubmit="prepareEmail(event)">
+        
+                <label for="passenger-name">Passenger Name:</label>
+                <input type="text" id="passenger-name" name="Passenger Name" placeholder="Enter your name" required>
+        
+                <label for="origin">Travelling From:</label>
+                <input type="text" id="origin" name="Origin" placeholder="Enter departure city" required>
+        
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="Destination" placeholder="Enter destination city" required>
+        
+                <label for="departure">Departure Date:</label>
+                <input type="date" id="departure" name="Departure Date" required>
+        
+                <label for="return">Return Date:</label>
+                <input type="date" id="return" name="Return Date">
+        
+                <label for="flight-class">Flight Class:</label>
+                <select id="flight-class" name="Flight Class">
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first-class">First Class</option>
+                </select>
+        
+                <label for="num-passengers">Number of Passengers:</label>
+                <input type="number" id="num-passengers" name="Passengers" value="1" min="1" required>
+        
+                <button type="submit">Submit</button>
+            </form>
+        
+            <!-- Optional: Remove the summary display -->
+            <div id="booking-summary" class="summary" style="display: none;">
+                <h2>Booking Summary</h2>
+                <p id="summary-name"></p>
+                <p id="summary-origin"></p>
+                <p id="summary-destination"></p>
+                <p id="summary-departure"></p>
+                <p id="summary-return"></p>
+                <p id="summary-class"></p>
+                <p id="summary-passengers"></p>
+                <p id="summary-fare"></p>
+            </div>
+        </section>
+        
+    <script>
+        function prepareEmail(event) {
+    event.preventDefault();
+
+    // Fetch values from form fields
+    const name = document.getElementById("passenger-name").value;
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+    const departureDate = document.getElementById("departure").value;
+    const returnDate = document.getElementById("return").value;
+    const flightClass = document.getElementById("flight-class").value;
+    const numPassengers = parseInt(document.getElementById("num-passengers").value);
+
+    // Optional: Define class prices and calculate fare
+    const classPrices = { "economy": 200, "business": 500, "first-class": 1000 };
+    const totalFare = classPrices[flightClass] * numPassengers;
+
+    // Create a hidden input field for Total Fare
+    const form = document.getElementById("flight-booking-form");
+    const fareInput = document.createElement("input");
+    fareInput.type = "hidden";
+    fareInput.name = "Total Fare";
+    fareInput.value = "$" + totalFare.toFixed(2);
+
+    // Append hidden input to form
+    form.appendChild(fareInput);
+
+    // Automatically submit the form to Formspree
+    form.submit();
+}
+
+
+    </script>
+</body>
+</html>

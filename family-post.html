@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="family-adventure.css">
+    <title>Family Adventure Blog</title>
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div class="header-container">
+            <img src="31s497f286tcajn7f7t3hfekss_image.jpg" alt="Family Adventure Blog Logo" class="logo">
+            <h1 class="site-title">Family Adventure Blog</h1>
+            <nav class="main-nav">
+                <a href="travel-blogs.html">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">Travel Tips</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="destinations">
+        <div class="destination">
+            <img src="n019751_02_2027jul06_world_disneyland-hotel-pink-sky_16-9_tcm752-221019$p~1$f~jpg.jpg" alt="Disneyland Paris">
+            <h2>Disneyland Paris, France</h2>
+            <p>Experience magical adventures with your family at Disneyland Paris, complete with thrilling rides and picnic spots nearby.</p>
+        </div>
+
+        <div class="destination">
+            <img src="ff943d7a3f2aa11ad9bc54580b74304e.jpg" alt="Banff National Park">
+            <h2>Banff National Park, Canada</h2>
+            <p>Surrounded by stunning mountain views and pristine lakes, Banff is perfect for a relaxing family picnic.</p>
+        </div>
+
+        <div class="destination">
+            <img src="2560px-Hyde_Park_(Sydney)_aerial.jpg" alt="Hyde Park">
+            <h2>Hyde Park, London</h2>
+            <p>A peaceful green escape in the heart of London, offering family-friendly picnic areas and plenty of space to explore.</p>
+        </div>
+
+        <div class="destination">
+            <img src="60409b_7823fd4eb9f943ec8869730c1ad9ad57~mv2.webp" alt="Sentosa Island">
+            <h2>Sentosa Island, Singapore</h2>
+            <p>Enjoy family time with beachside picnics, nature walks, and fun attractions on Sentosa Island.</p>
+        </div>
+
+        <div class="destination">
+            <img src="768_lago-como.jpg" alt="Lake Como">
+            <h2>Lake Como, Italy</h2>
+            <p>With its breathtaking lakeside scenery and peaceful gardens, Lake Como is a serene family picnic destination.</p>
+        </div>
+
+        <div class="destination">
+            <img src="04travel-central-park-11-superJumbo.jpg" alt="Central Park">
+            <h2>Central Park, New York</h2>
+            <p>Central Park offers endless picnic spots, playgrounds, and activities for a fun-filled family outing.</p>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <h2>Share Your Family Adventures</h2>
+        <form id="comment-form" action="https://formspree.io/f/xanyzprn" method="post" class="comment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+            
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="message" rows="5" placeholder="Share your family adventure here..." required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="success-message" style="display: none; color: green;">Thank you! Your comment has been sent successfully.</div>
+    <div id="error-message" style="display: none; color: red;">Oops! There was an error. Please try again.</div>
+</div>
+<script>
+const form = document.querySelector('.comment-form');
+const successMessage = document.getElementById('success-message');
+const errorMessage = document.getElementById('error-message');
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault(); // Prevent page reload
+
+const formData = new FormData(form);
+
+try {
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            'Accept': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+        form.reset(); // Reset the form fields
+    } else {
+        throw new Error('Submission failed');
+    }
+} catch (error) {
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'block';
+}
+});
+
+
+</script>
+
+    <footer>
+        <p>&copy; 2024 Family Adventure Blog</p>
+    </footer>
+</body>
+</html>

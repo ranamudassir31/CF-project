@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header .site-title {
+    display: inline-block;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+nav.main-nav {
+    margin-top: 15px;
+}
+
+nav.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+}
+
+nav.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Section */
+.destinations {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.destination {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #333;
+}
+
+.destination h2 {
+    font-size: 1.5rem;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.destination p {
+    padding: 0 15px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.destination .destination-info {
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .destination img {
+        height: 180px;
+    }
+}
+/* Comment Section */
+.comment-section {
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.comment-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.comment-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.comment-form button {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+#success-message, #error-message {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#success-message {
+    color: green;
+}
+
+#error-message {
+    color: red;
+}

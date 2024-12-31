@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #e3f2fd, #03963b);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+.brand-header {
+    text-align: center;
+    padding: 20px;
+    background: #035114;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.brand-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Main Section */
+.brand-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.brand-description,
+.highlights,
+.booking-form {
+    margin-bottom: 20px;
+}
+
+.brand-description h2,
+.highlights h3,
+.booking-form h2 {
+    color: #0de142;
+    margin-bottom: 10px;
+}
+
+.brand-description p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.highlights ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.highlights ul li {
+    margin: 5px 0;
+}
+
+/* Booking Form */
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+button {
+    background-color: #2dfa75;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #00b321ec;
+}
+.summary {
+    display: none;
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    background: #06ec2d;
+    padding: 10px;
+    border-radius: 8px;
+}
