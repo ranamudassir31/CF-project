@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hotel.css">
     <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "OTFkVmKxHDQTXwN4B",
+      });
+   })();
+</script>
 </head>
 <body>
     <div class="discount-banner">
@@ -191,6 +201,26 @@
     const hotel = document.getElementById("hotel-selection").value;
     const roomType = document.getElementById("room-type").value;
     const guests = parseInt(document.getElementById("number-of-guests").value);
+    
+    var templateParams = {
+  name: guestName,
+  Email: email,
+  Phone: phone,
+  CheckIn: checkIn,
+  CheckOut: checkOut,
+  Hotel: hotel,
+  RoomType: roomType,
+  Guests: guests,
+};
+
+emailjs.send('service_tktvz4h', 'template_4b4ic45', templateParams).then(
+  (response) => {
+    console.log('SUCCESS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('FAILED...', error);
+  },
+);
 
     // Define room prices
     const roomPrices = {
